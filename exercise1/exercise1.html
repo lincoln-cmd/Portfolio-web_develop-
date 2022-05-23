@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>exercise1</title>
+        <meta charset='UTF-8'>
+        <meta name = 'viewport' content = 'width=device-width, initial-scale=1.0'>
+        
+        <!-- utilize py-script -->
+        
+        <!-- import pyscript from web -->
+        
+        <link rel='stylesheet' href='https://pyscript.net/alpha/pyscript.css' />
+        <script defer src = 'https://pyscript.net/alpha/pyscript.js'></script>
+        
+        <!-- define python environment -->
+        
+        <py-env>
+            - bokeh
+            - matplotlib
+            - pandas
+            - scikit-learn
+            - path:
+                - ./my_models.py
+        </py-env>
+
+    </head>
+    
+    <body>
+        <p>hello world!</p>
+        
+        <h1>random numbers' plot</h1>
+        
+        <py-script output='plot'>
+        import matplotlib as plt
+        from my_models import make_x_y
+        
+        x, y = make_x_y(n=1000)
+        
+        fig, ax = plt.subplots()
+        ax.scatter(x, y)
+        fig
+        </py-script>
+        
+    </body>
+    
+</html>
